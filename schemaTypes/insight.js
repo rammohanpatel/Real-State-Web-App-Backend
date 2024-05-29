@@ -1,6 +1,6 @@
-const post = {
-    title: 'Post',
-    name: 'post',
+const insight = {
+    title: 'Insight',
+    name: 'insight',
     type: 'document',
     fields: [
       {
@@ -34,7 +34,6 @@ const post = {
           {
             type: 'block',
           },
-
         ],
       },
       {
@@ -54,7 +53,13 @@ const post = {
         title:'Document',
         name:'document',
         type:'file',
-      }
+      },
+      {
+        title: 'Featured',
+        name: 'featured',
+        type: 'boolean',
+        description: 'Mark as featured insight',
+      },
     ],
     preview: {
       select: {
@@ -64,4 +69,4 @@ const post = {
     },
   }
   
-  export default post
+  export default insight
