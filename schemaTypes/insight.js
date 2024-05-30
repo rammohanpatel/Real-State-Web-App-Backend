@@ -7,6 +7,7 @@ const insight = {
         name: 'title',
         title: 'Title',
         type: 'string',
+        validation: Rule => Rule.required(), // Mark title as required
       },
       {
         name: 'image',
@@ -15,7 +16,8 @@ const insight = {
         options: {
           hotspot: true,
           layout: 'grid',
-        }
+        },
+        validation: Rule => Rule.required(), // Mark image as required
       },
       { 
         name: 'slug',
@@ -24,7 +26,8 @@ const insight = {
         options: {
           source: 'title',
           maxLength: 90,
-        }
+        },
+        validation: Rule => Rule.required(), // Mark slug as required
       },
       {
         name:'summary',
@@ -35,6 +38,7 @@ const insight = {
             type: 'block',
           },
         ],
+        validation: Rule => Rule.required(), // Mark summary as required
       },
       {
         name: 'body',
@@ -47,7 +51,11 @@ const insight = {
           {
             type: 'image'
           },
+          {
+            type: 'file',
+          }
         ],
+        validation: Rule => Rule.required(), // Mark body as required
       },    
       {
         title:'Document',
