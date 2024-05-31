@@ -58,6 +58,13 @@ const post = {
       validation: Rule => Rule.required(), // Mark body as required
     },
     {
+        name:'author',
+        title:'Author',
+        type:'reference',
+        to: [{type:'person'}],
+        validation: Rule => Rule.required(),
+    },
+    {
       title: 'Featured',
       name: 'featured',
       type: 'boolean',
