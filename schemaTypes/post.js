@@ -58,11 +58,11 @@ const post = {
       validation: Rule => Rule.required(), // Mark body as required
     },
     {
-        name:'author',
-        title:'Author',
-        type:'reference',
-        to: [{type:'person'}],
-        validation: Rule => Rule.required(),
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{ type: 'person' }],
+      validation: Rule => Rule.required(),
     },
     {
       title: 'Featured',
@@ -74,7 +74,41 @@ const post = {
       title: 'Document',
       name: 'document',
       type: 'file',
-    }
+    },
+    {
+      name: 'publishDate',
+      title: 'Publish Date',
+      type: 'date',
+      options: {
+        dateFormat: 'DD MMMM, YYYY',
+      },
+      validation: Rule => Rule.required(), // Mark publish date as required
+    },
+    {
+      name: 'tagType',
+      title: 'Tag Type',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Article', value: 'Article' },
+          { title: 'Blog', value: 'Blog' },
+        ],
+      },
+      validation: Rule => Rule.required(), // Mark tag type as required
+    },
+    {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [
+        {
+          type: 'string',
+        },
+      ],
+      options: {
+        layout: 'tags',
+      },
+    },
   ],
   preview: {
     select: {
